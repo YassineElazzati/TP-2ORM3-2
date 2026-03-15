@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: tp2_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user_tp2
+      POSTGRES_PASSWORD: password_tp2
+      POSTGRES_DB: db_articles
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
